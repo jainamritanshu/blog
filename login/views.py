@@ -10,10 +10,10 @@ from .forms import RegistrationForm
 def register(request):
 	if request.method == 'POST':
 		form = RegistrationForm(request.POST)
-		if form.is_valid:
+		if form.is_valid():
 			user = User.objects.create_user(
 				username=form.cleaned_data['email_id'],
-				password=form.cleaned_data['passw'])	
+				password=form.cleaned_data['password'])	
 			return HttpResponseRedirect('/register/success')
 	else:
 		form = RegistrationForm()

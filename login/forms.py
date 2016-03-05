@@ -5,7 +5,7 @@ from django.utils.translation import ugettext_lazy as _
 
 class RegistrationForm(forms.Form):
 	your_name = forms.CharField(label='Name', max_length=100, required=True)
-	email_id = forms.CharField(label='Enter your email id', max_length=13, required=True)
+	email_id = forms.CharField(label='Enter your email id', max_length=30, required=True)
 	password = forms.CharField(widget=forms.PasswordInput, label='Passsword', max_length=20, required=True)
 	password_again = forms.CharField(widget=forms.PasswordInput, label='Confirm Password', max_length=20, required=True)
 
