@@ -15,3 +15,8 @@ def detail(request, q_id):
 	except Question.DoesNotExist:
 		raise Http404("Question does not exist")
 	return render(request, 'forum/detail.html', {'ques': ques})		
+
+def ans_list(request):
+	latest_ans_list = Answer.objects.order_by('pub_date')	
+	a = {'latest_ans_list': latest_ans_list}
+	return render(request, 'forum/detail.html', a)
