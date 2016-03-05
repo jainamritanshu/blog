@@ -1,1 +1,12 @@
 <h1>{{ ques.text }}</h1>
+<p>By -</p>
+<p>{{ ques.author }}</p>
+{% if latest_ans_list %}
+    <ul>
+    {% for x in latest_ans_list %}
+        <li><p>{{ x.text }}</p></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No answers are available for this question yet.</p>
+{% endif %}  
