@@ -35,3 +35,16 @@ def q_form(request):
 		form = Question()
 	c_data = {'form': form}
 	return HttpResponseRedirect('ques_list.html', c_data)			
+
+def a_form(request):
+	if request.method == 'POST':
+		form = Question(request.POST)
+		if form.is_valid():
+			a = Answer()
+			a.text = form.cleaned_data.get('y_ans', 'default1')
+			a.save()
+
+	else:
+		form = Answer()
+	c_data = {'form': form}
+	return HttpResponseRedirect('your_ques.html', c_data)	
