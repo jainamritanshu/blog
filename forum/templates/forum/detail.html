@@ -4,9 +4,15 @@
 {% if latest_ans_list %}
     <ul>
     {% for x in latest_ans_list %}
-        <li><p>{{ x.text }}</p></li>
+        <li>>{{ x.title }}</li>
     {% endfor %}
     </ul>
 {% else %}
-    <p>No answers are available for this question yet.</p>
-{% endif %}  
+    <p>No answers are available for this question.Be the first to answer this question!</p>
+ {% endif %}  
+
+ <form action="y_ans" method="POST">
+ 	<label for="y_ans">Answer this question</label>
+ 	<input id="y_ans" type="text" name="y_ans" value="typing....">
+ 	<input type="submit" value="OK">
+ </form>	
