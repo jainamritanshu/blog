@@ -1,0 +1,11 @@
+<div>
+	<h1><a href="/">Home</a></h1>
+</div>
+
+{% for q in ques %}
+	<div>
+		<p>asked on: {{ q.published_date }}</p>
+		<h1><a href="">{{ q.title }}</a></h1>
+		<p>{{ q.text|linebreaks }}</p>
+	</div>
+{% endfor %}			
